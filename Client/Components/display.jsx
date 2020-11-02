@@ -3,10 +3,6 @@ import './style.css';
 
 function Display (props) {
 
-
-
-
-
     return (
         <div className="display-box">{props.word}</div>
         

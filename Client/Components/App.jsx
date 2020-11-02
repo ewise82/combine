@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect} from 'react';
 import './style.css';
 import Display from './display.jsx';
+import Delete from './delete.jsx';
 
 function App() {
 const [word, setWord] = useState('');
@@ -20,10 +21,6 @@ const checkWord = (word) => {
     
 return (
 
-
-
-
- 
 <div className="main-box">
   <div className="column">
     <div className="circle-1">
@@ -32,6 +29,13 @@ return (
     <div className="circle-2">
         <div className="circle" onClick={() => setWord(word + 'P')}>P</div>
     </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <Delete word={word} setWord={setWord}/>
   </div>
 
   <div className="column">
