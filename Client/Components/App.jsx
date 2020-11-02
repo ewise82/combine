@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect} from 'react';
 import './style.css';
+import Display from './display.jsx';
 
 function App() {
+const [word, setWord] = useState('');
 const [wordList, setWordList] = useState([]);
 
 
@@ -18,8 +20,11 @@ const checkWord = (word) => {
     
 return (
 
+
+
+
+ 
 <div className="main-box">
-  
   <div className="column">
     <div className="circle-1">
         <div className="circle">S</div> 
@@ -30,6 +35,9 @@ return (
   </div>
 
   <div className="column">
+  <Display word={word}/>
+  <br></br>
+  <br></br>
     <div className="circle-3">
         <div className="circle">R</div>
     </div>
@@ -50,6 +58,8 @@ return (
     </div>
   </div>
 </div>
+
+
 
     
 );
