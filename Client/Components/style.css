@@ -31,11 +31,14 @@ Circles
 Boxes
 =================
 */
+    .wrapper {
+    
+    }  
   .main-box {
-  display: flex;
-  justify-content: center;
-  margin-top: 400px;
-  }
+    display: flex;
+    justify-content: center;
+    margin-top: 400px;
+    }
 
   .display-box {
     display: flex;
