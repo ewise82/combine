@@ -17,7 +17,13 @@ Circles
   }
   .circle:hover {
    cursor: pointer;
+   background: rgb(196, 189, 189);
+ 
   }
+
+  .circle:active { 
+    transform: scale(0.95); 
+} 
 
   .circle-middle{
     width: 150px;
@@ -29,6 +35,16 @@ Circles
     text-align: center;
     background: rgb(247, 229, 68)
   }
+
+  .circle-middle:hover {
+    cursor: pointer;
+    background: rgb(218, 200, 37);
+  
+   }
+ 
+   .circle-middle:active { 
+     transform: scale(0.95); 
+ } 
 
   .circle-middle:hover {
 
@@ -44,7 +60,7 @@ Boxes
   .main-box {
     display: flex;
     justify-content: center;
-    margin-top: 400px;
+    margin-top: 100px;
     }
 
   .display-box {
@@ -94,6 +110,11 @@ Row
 .column {
 float: left;
 }
+
+.column-wordlist {
+    float: left;
+    padding-left:40px;
+    }
 
 
   /*
@@ -163,4 +184,43 @@ Text
 .invalid-length {
     color: red;
     font-size: 21px;
+}
+
+.valid-length {
+    color:blue;
+    font-size: 21px;
+}
+
+.combine-title {
+    font-size: 80px;
+    font-family: 'Courier New';
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin-right: 300px;
+}
+
+.word-list {
+    font-size: 25px;
+    color: blue;
+    text-align: center;
+}
+
+.word-list-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.word-list-centered {
+    display: flex;
+    justify-content: center;
+    min-width: 200px;
+}
+
+.score {
+    font-size: 40px;
+    padding-left: 15px;
 }
