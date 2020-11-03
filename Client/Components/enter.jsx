@@ -20,8 +20,9 @@ function Enter(props) {
                     if (response.data) {
                         if (!wordList.includes(word)) {
                             setScoreWord(true);
-                            setWordList(currentArray => [...currentArray, word]);
-                            setScore(score + calculateScore(word));
+                            var points = calculateScore(word);
+                            setWordList(currentArray => [...currentArray, word +' '+'+'+ points]);
+                            setScore(score + points);
                         }
                     }
                 })
@@ -38,6 +39,9 @@ function Enter(props) {
         var score = word.length;
         if (score > 6) {
             score += 7;
+        }
+        if (score === 4) {
+            score = 1;
         }
         return score;
     }

@@ -218,9 +218,11 @@ Text
     display: flex;
     justify-content: center;
     min-width: 200px;
+    color: #666666;
 }
 
 .score {
     font-size: 40px;
-    padding-left: 15px;
+    padding-left: 35px;
+    color: #666666;
 }
