@@ -9,12 +9,13 @@ app.use(express.static(`${__dirname}/../Public`));
 app.get('/api/words/:word', (req, res) => {
 const word = req.params.word;
 console.log(req);
-Word.findOne({word:word})
+Word.findOne({"WORD":word})
   .then((data) => {
       console.log('data ', data);
-      if (data === word) {
+      console.log(data['WORD']);
+      if (data !== null) {
           res.send(data);
-      }
+      } 
   })
     .catch((err) => {
         res.sendStatus(404);
