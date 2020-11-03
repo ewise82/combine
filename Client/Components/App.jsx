@@ -1,23 +1,17 @@
-import axios from 'axios';
 import React, { useState, useEffect} from 'react';
 import './style.css';
 import Display from './display.jsx';
 import Delete from './delete.jsx';
+import Enter from './enter.jsx';
 
 function App() {
 const [word, setWord] = useState('');
 const [wordList, setWordList] = useState([]);
+const [validLength, setValidLength] = useState(true);
+const [validWord, setValidWord] = useState(true);
 
 
-const checkWord = (word) => {
-    axios.get(`/api/words/${word}`)
-      .then((result) => {
-        // check result to see if entry was a word
-      })
-        .catch((err) => {
-            console.log(err);
-        });
-}
+
     
 return (
 
@@ -60,8 +54,26 @@ return (
     <div className="circle-7">
         <div className="circle" onClick={() => setWord(word + 'I')}>I</div>
     </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <Enter 
+    word={word} 
+    setWord={setWord}
+    validLength={validLength}
+    setValidLength={setValidLength}
+    validWord={validWord}
+    setValidWord={setValidWord}
+    />
+    <br></br>
+    <br></br>
+    {!validLength?<div className="invalid-length">Must be 4+ letters!</div>: null}
   </div>
 </div>
+
 
 
 
