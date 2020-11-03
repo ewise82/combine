@@ -8,17 +8,17 @@ app.use(express.static(`${__dirname}/../Public`));
 
 app.get('/api/words/:word', (req, res) => {
 const word = req.params.word;
-console.log(req);
+
 Word.findOne({"WORD":word})
   .then((data) => {
-      console.log('data ', data);
-      console.log(data['WORD']);
       if (data !== null) {
           res.send(data);
-      } 
+      } else {
+          res.sendStatus(404);
+      }
   })
     .catch((err) => {
-        res.sendStatus(404);
+        res.sendStatus(500);
         console.log('server error ', err);
     })
 });

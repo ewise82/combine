@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import axios from 'axios';
-const db = require('../Database/index.js');
 
 function Enter(props) {
     const { word, setWord, validLength, setValidLength, validWord, setValidWord } = props;
@@ -15,11 +14,17 @@ function Enter(props) {
             setValidWord(false);
         } else {
             axios.get(`/api/words/${word}`)
-                .then((result) => {
-                   console.log('result ', result);
+                .then((response) => {
+                    if (response.data) {
+                       setWord('Calam');
+                   } else {
+                       setWord('Blah');
+                   }
                 })
                 .catch((err) => {
                     console.log(err);
+                    setWord('Error');
+                    
                 });
         }
 
