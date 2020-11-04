@@ -60,7 +60,7 @@ Boxes
   .main-box {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
     }
 
   .display-box {
@@ -171,6 +171,28 @@ Buttons
 	background-color:#f6f6f6;
 }
 .enter-button:active {
+	position:relative;
+	top:1px;
+}
+
+.nav-button {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:#ffffff;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:11px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.nav-button:hover {
+	background-color:#f6f6f6;
+}
+.nav-button:active {
 	position:relative;
 	top:1px;
 }

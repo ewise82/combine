@@ -18,10 +18,11 @@ function Enter(props) {
             axios.get(`/api/words/${word}`)
                 .then((response) => {
                     if (response.data) {
-                        if (!wordList.includes(word)) {
+                        var points = calculateScore(word);
+                        var wordPlusPoints = word +' '+'+'+ points;
+                        if (!wordList.includes(wordPlusPoints)) {
                             setScoreWord(true);
-                            var points = calculateScore(word);
-                            setWordList(currentArray => [...currentArray, word +' '+'+'+ points]);
+                            setWordList(currentArray => [...currentArray, wordPlusPoints]);
                             setScore(score + points);
                         }
                     }
